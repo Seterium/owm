@@ -19,7 +19,15 @@ export default {
     closeIcon,
     loopIcon
   },
+  props: {
+    apiKey: {
+      type: String,
+      default: () => '',
+      required: true
+    }
+  },
   created() {
+    this.settingsSet(['apiKey', this.apiKey])
     this.loadCities()
     this.loadLastViewedCity()
   },
@@ -81,7 +89,10 @@ export default {
 </script>
 <template>
   <div class="app">
-    <div class="app__header">
+    <div 
+      v-if="apiKey.length"
+      class="app__header"
+    >
       <button
         v-if="view === 'weather'"
         class="app__header-button"

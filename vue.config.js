@@ -1,8 +1,21 @@
 const webpack  = require('webpack')
 const path = require('path')
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 
 module.exports = {
+  
   configureWebpack: {
+    optimization: {
+      minimizer: [
+        new UglifyJsPlugin({
+          uglifyOptions: {
+            output: {
+              comments: false,
+            },
+          },
+        })
+      ],
+    },
     plugins: [
       new webpack.optimize.LimitChunkCountPlugin({
         maxChunks: 1

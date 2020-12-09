@@ -34,7 +34,8 @@ export default {
       'region'
     ]),
     ...mapState('settings', [
-      'cities'
+      'cities',
+      'apiKey'
     ]),
     windDirection() {
       return this.weather.wind.deg
@@ -90,7 +91,7 @@ export default {
       v-else-if="hasError"
       class="weather__placeholder"
     >
-      <div>
+      <div v-if="apiKey.length">
         <div class="weather__placeholder-title">
           Oops, it seems something went wrong
         </div>
@@ -99,6 +100,14 @@ export default {
         </div>
         <div class="weather__placeholder-actions">
           <button @click="reload">Refresh</button>
+        </div>
+      </div>
+      <div v-else>
+        <div class="weather__placeholder-title">
+          API key not specified
+        </div>
+        <div class="weather__placeholder-subtitle weather__placeholder-subtitle--no-margin">
+          Add valid api-key attribute to widget tag
         </div>
       </div>
     </div>

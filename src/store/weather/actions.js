@@ -4,7 +4,6 @@ export default {
   getWeatherData({ commit }, payload) {
     API.weather.load({
       ...payload,
-      appid: '6e99a56249d56d1f11171237027677fd',
       units: 'metric'
     })
     .then(({ data }) => {
@@ -40,7 +39,6 @@ export default {
   checkCityExist({ commit }, { payload, notFoundCallback }) {    
     API.weather.load({
       q: payload,
-      appid: '6e99a56249d56d1f11171237027677fd',
       units: 'metric'
     })
     .then(({ data }) => {

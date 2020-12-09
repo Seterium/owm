@@ -1,4 +1,5 @@
 export default () => ({
   view: 'weather',
-  cities: []
+  cities: [],
+  apiKey: ''
 })
