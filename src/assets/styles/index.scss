@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+
+open-weather * {
+  position: relative;
+  box-sizing: border-box;
+
+  button,
+  input {
+    font-family: 'Roboto', sans-serif;
+    outline: none;
+  }
+
+  @keyframes rotate {
+    from {
+      transform: rotate(0deg)
+    }
+
+    to {
+      transform: rotate(-360deg)
+    }
+  }
+
+  @keyframes progress-circular-rotate {
+    to {
+      transform:rotate(1turn)
+    }
+  }
+
+  @keyframes progress-circular-dash {
+    0% {
+      stroke-dasharray: 1, 200;
+      stroke-dashoffset:0px
+    }
+
+    50% {
+      stroke-dasharray: 100, 200;
+      stroke-dashoffset:-15px
+    }
+
+    to{
+      stroke-dasharray: 100, 200;
+      stroke-dashoffset: -125px
+    }
+  }
+
+  & .flip-list-move {
+    transition: transform 0.5s;
+  }
+
+  & .no-move {
+    transition: transform 0s;
+  }
+
+  & .list-group {
+    min-height: 20px;
+
+    &-item {
+      cursor: move;
+
+      i {
+        cursor: pointer;
+      }
+    }
+  }
+}

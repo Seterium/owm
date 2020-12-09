@@ -1,0 +1,125 @@
+.settings {
+  padding: 16px;
+
+  &__cities-list {
+    padding-bottom: 8px;
+    margin-bottom: 8px;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+
+    &-title {
+      margin-bottom: 8px;
+      font-size: 18px;
+      font-weight: 500;
+    }
+
+    &-subtitle {
+      margin-bottom: 16px;
+      font-size: 14px;
+      color: rgba(0,0,0,0.5);
+    }
+  }
+
+  &__city {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background-color: #f5f5f5;
+    border-radius: 4px;
+
+    &:not(:last-child) {
+      margin-bottom: 8px;
+    }
+
+    &--ghost {
+      opacity: 0;
+    }
+    
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    &-name {
+      display: block;
+      flex-grow: 2;
+      overflow: hidden;
+      padding: 8px 4px;
+      font-size: 15px;
+      text-align: left;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      background-color: transparent;
+      border: none;
+      
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    &-drag-area {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 35px;
+      margin-right: 4px;
+      transition-duration: 0.2s;
+
+      &:hover {
+        cursor: move;
+        background-color: #eee;
+      }
+    }
+
+    &-remove {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 35px;
+      padding: 0;
+      background-color: transparent;
+      border: none;
+      transition-duration: 0.2s;
+
+      svg {
+        fill: rgba(0,0,0,0.3);
+        transition-duration: 0.2s;
+      }
+
+      &:hover {
+        cursor: pointer;
+        background-color: #eee;
+
+        svg {
+          fill: rgba(0,0,0,0.6);
+        }
+      }
+    }
+  }
+
+  &__button {
+    width: 100%;
+    padding: 8px 16px;
+    font-size: 15px;
+    font-weight: 500;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 4px;
+    background-color: transparent;
+    transition-duration: 0.2s;
+
+    &:hover {
+      cursor: pointer;
+      background-color: #f5f5f5;
+    }
+
+    &:focus {
+      background-color: #eee;
+    }
+
+    &:active {
+      background-color: #ddd;
+    }
+  }
+}
