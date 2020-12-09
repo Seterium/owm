@@ -1,5 +1,7 @@
 # OWM widget
 
+### [DEMO](https://seterium.github.io/owm/)
+
 ## How to add to site
 
 Paste below code into `<head>`
